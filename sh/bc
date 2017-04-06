@@ -1,0 +1,54 @@
+#!/usr/bin/bash
+php="/usr/local/php/bin/php"
+server_path="/wwwroot/wcapplet/Sys/Server/SolServ.php"
+server_master_proccess="php-wcapplet:master"
+
+COMMAND=
+
+_kill_command(){
+COMMAND="ps -ef | grep -v grep | grep '$1' | cut -c 9-15 | xargs kill -15"
+return 0
+}
+
+_find_command(){
+COMMAND="ps -ef | grep -v grep | grep '$1'"
+return 0
+}
+
+if [ -z $1 ]
+ then
+  echo "[Error] : You can hold on the 'start' | 'stop' command"
+  echo "[Usage] : "
+  echo "[path/to/ | ./]bc start    ( are you sure you has no one start ? )"
+  echo "[path/to/ | ./]bc stop     ( are you sure you already started ? )"
+elif [ $1 = "start" ]
+  then
+    _find_command ${server_master_proccess}
+    ret=`eval ${COMMAND}`
+    echo ${ret}
+    if [ -n "${ret}" ]
+        then
+          echo '[Warning] : The Server already started'
+    else
+        ass="${server_path}"
+        $php ${ass}
+        echo "[Info] : String Server..."
+        sleep 1s
+        echo "[Info] : Started Done......"
+        echo ""
+    fi
+elif [ $1 = "stop" ]
+ then
+    _find_command ${server_master_proccess}
+    ret=`eval ${COMMAND}`
+    if [ -n "${ret}" ]
+      then
+        _kill_command ${server_master_proccess}
+
+        `eval ${COMMAND}`
+        echo "[Info] : Stopping Server..."
+        echo "[Info] : Stopping Done..."
+    else
+        echo '[Warning] : Please confirm your process already started'
+    fi
+fi
