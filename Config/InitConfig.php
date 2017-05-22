@@ -50,7 +50,7 @@ class InitConfig
   public function PoolRun()
   {
     # MysqlPool
-    if ($this->_config['MYSQL']['status'])
+    if ($this->_config['MYSQL']['status'] == 'true')
     {
       MySqlPool::run($this->_di, $this->_config['MYSQL']);
 
@@ -87,7 +87,7 @@ class InitConfig
 
     }
     # RedisPool
-    if ($this->_config['REDIS']['status'])
+    if ($this->_config['REDIS']['status'] == 'true')
     {
       RedisPool::run($this->_di, $this->_config['REDIS']);
     }

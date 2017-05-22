@@ -22,15 +22,15 @@ class SolServ
    */
   private function __construct()
   {
-    $http = $this->http = new \Swoole\Http\Server("0.0.0.0", 9501);
+    $http = $this->http = new \Swoole\Http\Server("0.0.0.0", 9555);
 
     $http->set(
         [
             'worker_num'    => 3,        //worker进程数量
-            'daemonize'     => true,    //守护进程设置成true
+            'daemonize'     => false,    //守护进程设置成true
             'max_request'   => 10000,    //最大请求次数，当请求大于它时，将会自动重启该worker
             'dispatch_mode' => 1,
-            'log_file'      => '/path/to/BcSys/logs/server/server.log',
+            'log_file'      => '/wwwroot/share/music/logs/server/server.log',
         ]
     );
 
@@ -55,7 +55,7 @@ class SolServ
     $time = gmdate("Y-m-d H:i:s", time() + 8 * 60 * 60);
     $msg  = "->[onStart] PHP=" . PHP_VERSION . " swoole=" . SWOOLE_VERSION . " Master-Pid={$this->http->master_pid} Manager-Pid={$this->http->manager_pid}" . ' time=' . $time . PHP_EOL;
     $this->_write_file(dirname(__DIR__, 2) . '/logs/server/StdOutServer.log', $msg);
-    swoole_set_process_name("php-wcapplet:master");
+    swoole_set_process_name("php-music:master");
 
     return true;
   }
@@ -78,7 +78,7 @@ class SolServ
     $time = gmdate("Y-m-d H:i:s", time() + 8 * 60 * 60);
     $msg  = "->[onManagerStart] time=" . $time . PHP_EOL;
     $this->_write_file(dirname(__DIR__, 2) . '/logs/server/StdOutServer.log', $msg);
-    swoole_set_process_name("php-wcapplet:manager");
+    swoole_set_process_name("php-music:manager");
   }
 
   /**
@@ -110,10 +110,10 @@ class SolServ
 
     if ($serv->taskworker)
     {
-      swoole_set_process_name("php-wcapplet[{$worker_id}] : task" . 'er');
+      swoole_set_process_name("php-music[{$worker_id}] : task" . 'er');
     } else
     {
-      swoole_set_process_name("php-wcapplet[{$worker_id}]: worker");
+      swoole_set_process_name("php-music[{$worker_id}]: worker");
     }
 
     /**
@@ -168,8 +168,6 @@ class SolServ
    */
   public function onRequest($request, $response)
   {
-    $response->header("Content-Type", "application/json;charset=utf-8");
-
     Storage::_set('request', $request);
     Storage::_set('response', $response);
 

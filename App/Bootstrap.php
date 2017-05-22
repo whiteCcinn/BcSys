@@ -46,6 +46,9 @@ class Bootstrap
     if (RouteConfig::exists($route = trim($request->server['request_uri'], '\/')))
     {
       $rInfo = RouteConfig::getRoute($route);
+      $response = Storage::_get('response');
+
+      $response->header("Content-Type", "{$rInfo['type']};charset=utf-8");
 
       $className = new $rInfo['className'];
       $action    = $rInfo['action'];

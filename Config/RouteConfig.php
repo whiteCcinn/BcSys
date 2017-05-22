@@ -21,7 +21,7 @@ class RouteConfig
    *
    * @var array
    */
-  public static $router_list = [];
+  public static $router_list = ['Asset'];
 
   public static function addRoute(array $route)
   {
@@ -51,13 +51,15 @@ class RouteConfig
       return [];
     }
 
+    !isset($routerInfo['type']) && $routerInfo['type'] = 'html';
+
     $string = [
         'Bc\App\Modules',
         ucfirst($routerInfo['module']),
         'Controllers\\' . ucfirst($routerInfo['controller']) . 'Controller'
     ];
 
-    return ['className' => implode('\\', $string), 'action' => $routerInfo['action'] . 'Action', 'isCoroutine' => (isset($routerInfo['coroutine']) && $routerInfo['coroutine'] === true) ? true : false];
+    return ['type' => $routerInfo['type'] == 'html' ? 'text/html' : 'application/json', 'className' => implode('\\', $string), 'action' => $routerInfo['action'] . 'Action', 'isCoroutine' => (isset($routerInfo['coroutine']) && $routerInfo['coroutine'] === true) ? true : false];
   }
 
   public static function initRoute()

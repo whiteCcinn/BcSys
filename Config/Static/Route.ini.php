@@ -13,6 +13,5 @@
  */
 return [
     'testCoroutine'  => ['module' => 'test', 'controller' => 'index', 'action' => 'index', 'coroutine' => true],
-    'getArticleList' => ['module' => 'article', 'controller' => 'index', 'action' => 'getArticleList'],
-    'getArticleInfo' => ['module' => 'article', 'controller' => 'index', 'action' => 'getArticleInfo'],
+    'Index' => ['module' => 'index', 'controller' => 'index', 'action' => 'index'],
 ];

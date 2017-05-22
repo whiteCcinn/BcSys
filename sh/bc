@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 php="/usr/local/php/bin/php"
-server_path="/wwwroot/wcapplet/Sys/Server/SolServ.php"
+server_path="/wwwroot/share/music/Sys/Server/SolServ.php"
 server_master_proccess="php-wcapplet:master"
 
 COMMAND=

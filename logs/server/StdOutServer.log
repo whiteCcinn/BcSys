@@ -1,0 +1,40 @@
+->[onStart] PHP=7.0.1 swoole=2.0.5 Master-Pid=2178 Manager-Pid=2179 time=2017-05-22 09:57:25
+->[onManagerStart] time=2017-05-22 09:57:25
+->[onWorkerStop] work_id1 time=2017-05-22 09:58:16
+->[onWorkerStop] work_id0 time=2017-05-22 09:58:16
+->[onWorkerStop] work_id2 time=2017-05-22 09:58:16
+->[onStart] PHP=7.0.1 swoole=2.0.5 Master-Pid=2206 Manager-Pid=2207 time=2017-05-22 09:58:21
+->[onManagerStart] time=2017-05-22 09:58:21
+->[onWorkerStop] work_id1 time=2017-05-22 09:58:32
+->[onWorkerStop] work_id2 time=2017-05-22 09:58:32
+->[onWorkerStop] work_id0 time=2017-05-22 09:58:32
+->[onStart] PHP=7.0.1 swoole=2.0.5 Master-Pid=2214 Manager-Pid=2215 time=2017-05-22 09:58:40
+->[onManagerStart] time=2017-05-22 09:58:40
+->[onStart] PHP=7.0.1 swoole=2.0.5 Master-Pid=2269 Manager-Pid=2270 time=2017-05-22 10:01:52
+->[onManagerStart] time=2017-05-22 10:01:52
+->[onStart] PHP=7.0.1 swoole=2.0.5 Master-Pid=2351 Manager-Pid=2352 time=2017-05-22 10:14:51
+->[onManagerStart] time=2017-05-22 10:14:51
+->[onStart] PHP=7.0.1 swoole=2.0.5 Master-Pid=2381 Manager-Pid=2382 time=2017-05-22 10:25:49
+->[onManagerStart] time=2017-05-22 10:25:49
+->[onStart] PHP=7.0.1 swoole=2.0.5 Master-Pid=2387 Manager-Pid=2388 time=2017-05-22 10:27:30
+->[onManagerStart] time=2017-05-22 10:27:30
+->[onStart] PHP=7.0.1 swoole=2.0.5 Master-Pid=2415 Manager-Pid=2416 time=2017-05-22 10:27:53
+->[onManagerStart] time=2017-05-22 10:27:53
+->[onStart] PHP=7.0.1 swoole=2.0.5 Master-Pid=2421 Manager-Pid=2422 time=2017-05-22 10:30:18
+->[onManagerStart] time=2017-05-22 10:30:18
+->[onWorkerError] work_id=0,work_pid=2424,exit_code=255 time=2017-05-22 10:30:20
+->[onStart] PHP=7.0.1 swoole=2.0.5 Master-Pid=2428 Manager-Pid=2429 time=2017-05-22 10:32:00
+->[onManagerStart] time=2017-05-22 10:32:00
+->[onWorkerError] work_id=0,work_pid=2431,exit_code=255 time=2017-05-22 10:32:01
+->[onStart] PHP=7.0.1 swoole=2.0.5 Master-Pid=2436 Manager-Pid=2437 time=2017-05-22 10:34:20
+->[onManagerStart] time=2017-05-22 10:34:20
+->[onStart] PHP=7.0.1 swoole=2.0.5 Master-Pid=2465 Manager-Pid=2466 time=2017-05-22 10:42:07
+->[onManagerStart] time=2017-05-22 10:42:08
+->[onStart] PHP=7.0.1 swoole=2.0.5 Master-Pid=2473 Manager-Pid=2474 time=2017-05-22 10:47:16
+->[onManagerStart] time=2017-05-22 10:47:16
+->[onStart] PHP=7.0.1 swoole=2.0.5 Master-Pid=2504 Manager-Pid=2505 time=2017-05-22 10:59:48
+->[onManagerStart] time=2017-05-22 10:59:48
+->[onStart] PHP=7.0.1 swoole=2.0.5 Master-Pid=2546 Manager-Pid=2547 time=2017-05-22 11:08:06
+->[onManagerStart] time=2017-05-22 11:08:06
+->[onStart] PHP=7.0.1 swoole=2.0.5 Master-Pid=2567 Manager-Pid=2568 time=2017-05-22 11:13:10
+->[onManagerStart] time=2017-05-22 11:13:10

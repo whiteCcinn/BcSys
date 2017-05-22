@@ -1,1 +1,4 @@
-# This is your server log
+# This is your server log[2017-05-21 18:58:16 #2178.0]	NOTICE	Server is shutdown now.
+[2017-05-21 18:58:32 #2206.0]	NOTICE	Server is shutdown now.
+[2017-05-21 19:30:20 $2422.0]	WARNING	swManager_check_exit_status: worker#0 abnormal exit, status=255, signal=0
+[2017-05-21 19:32:01 $2429.0]	WARNING	swManager_check_exit_status: worker#0 abnormal exit, status=255, signal=0
