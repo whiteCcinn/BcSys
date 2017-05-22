@@ -18,11 +18,17 @@ API-Swoole开发框架.
 chmod 777 Bcsys/sh/bc
 Bcsys/sh/bc start
 ```
+<<<<<<< HEAD
 # nginx配置例子
+=======
+
+# nginx例子
+>>>>>>> 5de9aecfc59ec00b94a96a6c109d5935d030b583
 
 ```
 server {
     listen       80;
+<<<<<<< HEAD
     server_name  music.crazylaw.cn;
 
 	// 如果要用到html而非API形式的时候，需要指定root路径，否则会直接进入rewrite模式
@@ -33,6 +39,17 @@ server {
     if (!-e $request_filename) {
        rewrite ^/(.*)  /index.php?$1 last;
     }
+=======
+    server_name  yourserver_name;
+
+
+    index  index.html index.htm index.php;
+
+   # 路由机制必须加上这一块
+   if (!-e $request_filename) {
+      rewrite ^/(.*)  /index.php?$1 last;
+   }
+>>>>>>> 5de9aecfc59ec00b94a96a6c109d5935d030b583
 
 
     error_page   500 502 503 504  /50x.html;
@@ -40,7 +57,12 @@ server {
         root   /usr/share/nginx/html;
     }
 
+<<<<<<< HEAD
     # 此处端口号为：9555，可以自定义设置端口
+=======
+    # 代理端口可进行修改
+    
+>>>>>>> 5de9aecfc59ec00b94a96a6c109d5935d030b583
     location ~ \.php$ {
              proxy_pass http://127.0.0.1:9555$request_uri;
              proxy_http_version 1.1;
@@ -49,6 +71,11 @@ server {
              fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
              include fastcgi_params;
     }
+<<<<<<< HEAD
 }
 
 ```
+=======
+
+```
+>>>>>>> 5de9aecfc59ec00b94a96a6c109d5935d030b583
