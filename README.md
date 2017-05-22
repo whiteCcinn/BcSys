@@ -18,3 +18,37 @@ API-Swoole开发框架.
 chmod 777 Bcsys/sh/bc
 Bcsys/sh/bc start
 ```
+
+# nginx例子
+
+```
+server {
+    listen       80;
+    server_name  yourserver_name;
+
+
+    index  index.html index.htm index.php;
+
+   # 路由机制必须加上这一块
+   if (!-e $request_filename) {
+      rewrite ^/(.*)  /index.php?$1 last;
+   }
+
+
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   /usr/share/nginx/html;
+    }
+
+    # 代理端口可进行修改
+    
+    location ~ \.php$ {
+             proxy_pass http://127.0.0.1:9555$request_uri;
+             proxy_http_version 1.1;
+             proxy_set_header Connection "keep-alive";
+             proxy_set_header X-Real-IP $remote_addr;
+             fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+             include fastcgi_params;
+    }
+
+```
