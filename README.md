@@ -1,7 +1,9 @@
 # BcSys
 
-API-Swoole开发框架.
+BcSwoole开发框架.
+
 # 特点
+0. 支持API以及非API的形式
 1. 使用了Swoole进行服务器的开发,常驻内存，结合Swoole的特点,常态信息进行内存常驻
 2. Mysql结合PDO和数据库连接池的特点，减少数据库IO操作，并且增加了Mysql连接心跳包检测机制
 3. Redis结合了phpredis的扩展和Mysql一样，实现了连接池的特性
